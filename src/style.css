@@ -53,3 +53,12 @@ body {
 button{
     cursor: pointer;
 }
+
+/* *{ */
+    /* background-color: #1f2937; */
+    /* color: white; */
+/* } */
+
+#main ,#nav, #foot{
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}

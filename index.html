@@ -107,20 +107,22 @@
             </div>
 
             <div>
-                <h3 class="text-sm font-semibold text-gray-500 mb-2">& more</h3>
+                <h3 class="text-sm font-semibold text-gray-500 mb-2">& learning</h3>
             </div>
         </div>
     </div>
 
 
     <!-- other section -->
-    <div class="md:max-w-[50vw] mx-auto bg-gray-100 min-h-[400px] rounded-xl p-5">
+    <div class="md:max-w-[50vw] mx-auto bg-gray-100 min-h-[200px] rounded-xl p-5 mb-3.5" id="nav">
 
         <!-- Navigation -->
-        <div class="flex">
-            <button class="tab-button tab-active px-4 py-2 text-gray-900"
-                onclick="switchTab('projects')">Projects</button>
-            <button class="tab-button px-4 py-2 text-gray-600" onclick="switchTab('blogs')">Blogs</button>
+
+        <div class="flex border-b border-gray-200 px-8">
+            <button class="tab-button tab-active px-4 py-4 text-gray-900"
+                onclick="switchTab(event,'projects')">Projects</button>
+            <button class="tab-button px-4 py-4 text-gray-600" onclick="switchTab(event, 'snippets')">Snippets</button>
+            <button class="tab-button px-4 py-4 text-gray-600" onclick="switchTab(event, 'blogs')">Blogs</button>
         </div>
         <!-- Navigation -->
 
@@ -141,7 +143,8 @@
                                 <span class="status-dot"></span>Live
                             </span>
                         </div>
-                        <a href="https://knrangaswamy.vercel.app/" target="_blank" class="text-sm text-gray-500">Link</a>
+                        <a href="https://knrangaswamy.vercel.app/" target="_blank"
+                            class="text-sm text-gray-500">Link</a>
                     </div>
                 </div>
 
@@ -157,7 +160,8 @@
                                 <span class="status-dot"></span>Live
                             </span>
                         </div>
-                        <a href="https://niranjansimha.netlify.app/" target="_blank" class="text-sm text-gray-500">Link</a>
+                        <a href="https://niranjansimha.netlify.app/" target="_blank"
+                            class="text-sm text-gray-500">Link</a>
                     </div>
                 </div>
 
@@ -165,8 +169,7 @@
                 <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
                     <div class="h-36 bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
                         <div class="h-36 flex items-center justify-center object-cover">
-                            <img src="/assets/project/currency.png" alt="currency"
-                                class="w-full h-full object-cover">
+                            <img src="/assets/project/currency.png" alt="currency" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <div class="p-5">
@@ -176,14 +179,45 @@
                                 <span class="status-dot"></span>Live
                             </span>
                         </div>
-                        <a href="https://currency-sms.netlify.app/" target="_blank" class="text-sm text-gray-500 ">Link</a>
+                        <a href="https://currency-sms.netlify.app/" target="_blank"
+                            class="text-sm text-gray-500 ">Link</a>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- snippets -->
+        <div id="snippets-content" class="tab-content p-8 hidden">
+            <div class="text-center py-12">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Code Snippets</h3>
+                <p class="text-gray-600">Useful code snippets and utilities coming soon!</p>
+            </div>
+        </div>
 
+        <!-- blogs-content -->
+        <div id="blogs-content" class="tab-content p-8 hidden">
+            <div class="space-y-6">
+                <article class="border-b border-gray-200 pb-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">Building
+                        Modern Web Applications</h3>
+                    <p class="text-gray-600 mb-3">Exploring the latest trends in web development and how to build
+                        scalable applications...</p>
+                    <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <span>15 Mar 2025</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
+
+    <div class="md:max-w-[50vw] mx-auto bg-gray-100 rounded-xl p-5 text-center" id="foot">
+        <p class="text-sm font-semibold text-gray-900">Any queries? Can Contact me.</p>
+    </div>
+
+
+    <script src="app.js"></script>
 </body>
 
 </html>

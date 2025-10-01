@@ -10,7 +10,7 @@
 </head>
 
 <body class="font-black bg-white p-5">
-    <div class="md:max-w-[50vw] mx-auto bg-gray-100 min-h-[400px] rounded-xl p-5" id="main">
+    <div class="md:max-w-[50vw] mx-auto bg-gray-100 min-h-[400px] rounded-xl p-5 mb-3.5" id="main">
         <div class="flex gap-5">
             <div id="logo" class="rounded-full flex justify-center items-center w-[150px]">
                 <img src="assets/myimg.jpeg" alt="my-img" class="w-[100%] rounded-full">
@@ -54,37 +54,38 @@
         <div class="h-[2px] w-[100%] bg-white mt-6 mb-6"></div>
 
         <div class=" bg-white p-2.5 rounded-xl border border-dotted">
-            <p class="text-gray-700 text-sm">I’m learning web development with a focus on creating user-friendly and visually appealing web applications.</p>
+            <p class="text-gray-700 text-sm">I’m learning web development with a focus on creating user-friendly and
+                visually appealing web applications.</p>
         </div>
 
         <!-- Skills Section -->
-            <div class="mt-6">
-                <div class="mb-4">
-                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Technologies</h3>
-                    <div>
-                        <span class="skill-tag">JavaScript</span>
-                        <!-- <span class="skill-tag">TypeScript</span> -->
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                    </div>
+        <div class="mt-6">
+            <div class="mb-4">
+                <h3 class="text-sm font-semibold text-gray-500 mb-2">Technologies</h3>
+                <div>
+                    <span class="skill-tag">JavaScript</span>
+                    <!-- <span class="skill-tag">TypeScript</span> -->
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
                 </div>
-                
-                <div class="mb-4">
-                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Frameworks</h3>
-                    <div>
-                        <!-- <span class="skill-tag">React</span> -->
-                        <!-- <span class="skill-tag">Next.js</span> -->
-                        <!-- <span class="skill-tag">Express</span> -->
-                        <!-- <span class="skill-tag">Astro</span> -->
-                        <!-- <span class="skill-tag">Hono.js</span> -->
-                        <span class="skill-tag">Tailwind CSS</span>
-                    </div>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="text-sm font-semibold text-gray-500 mb-2">Frameworks</h3>
+                <div>
+                    <!-- <span class="skill-tag">React</span> -->
+                    <!-- <span class="skill-tag">Next.js</span> -->
+                    <!-- <span class="skill-tag">Express</span> -->
+                    <!-- <span class="skill-tag">Astro</span> -->
+                    <!-- <span class="skill-tag">Hono.js</span> -->
+                    <span class="skill-tag">Tailwind CSS</span>
                 </div>
-                
-                <!-- <div class="mb-4">
+            </div>
+
+            <!-- <div class="mb-4">
                     <h3 class="text-sm font-semibold text-gray-500 mb-2">Databases</h3>
                     <div>
                         <span class="skill-tag">PostgreSQL</span>
@@ -92,25 +93,95 @@
                         <span class="skill-tag">Redis</span>
                     </div>
                 </div> -->
-                
-                <div class="mb-4">
-                    <h3 class="text-sm font-semibold text-gray-500 mb-2">Tools</h3>
-                    <div>
-                        <span class="skill-tag">Git</span>
-                        <!-- <span class="skill-tag">Bash</span> -->
-                        <span class="skill-tag">GitHub</span>
-                        <!-- <span class="skill-tag">Postman</span> -->
-                        <!-- <span class="skill-tag">Vercel</span> -->
-                        <span class="skill-tag">Figma</span>
-                    </div>
-                </div>
-                
+
+            <div class="mb-4">
+                <h3 class="text-sm font-semibold text-gray-500 mb-2">Tools</h3>
                 <div>
-                    <h3 class="text-sm font-semibold text-gray-500 mb-2">& more</h3>
+                    <span class="skill-tag">Git</span>
+                    <!-- <span class="skill-tag">Bash</span> -->
+                    <span class="skill-tag">GitHub</span>
+                    <!-- <span class="skill-tag">Postman</span> -->
+                    <!-- <span class="skill-tag">Vercel</span> -->
+                    <span class="skill-tag">Figma</span>
                 </div>
             </div>
+
+            <div>
+                <h3 class="text-sm font-semibold text-gray-500 mb-2">& more</h3>
+            </div>
+        </div>
     </div>
-    <div class="navigation">
+
+
+    <!-- other section -->
+    <div class="md:max-w-[50vw] mx-auto bg-gray-100 min-h-[400px] rounded-xl p-5">
+
+        <!-- Navigation -->
+        <div class="flex">
+            <button class="tab-button tab-active px-4 py-2 text-gray-900"
+                onclick="switchTab('projects')">Projects</button>
+            <button class="tab-button px-4 py-2 text-gray-600" onclick="switchTab('blogs')">Blogs</button>
+        </div>
+        <!-- Navigation -->
+
+
+        <!-- Projects Tab Content -->
+        <div id="projects-content" class="tab-content p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
+                    <div class="h-36 flex items-center justify-center object-cover">
+                        <img src="assets/project/knkangaswamy.png" alt="knrangaswamy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-sm font-semibold text-gray-900">K N Rangaswamy's Prortfolio</h3>
+                            <span class="flex items-center text-sm text-green-600 font-medium">
+                                <span class="status-dot"></span>Live
+                            </span>
+                        </div>
+                        <a href="https://knrangaswamy.vercel.app/" target="_blank" class="text-sm text-gray-500">Link</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
+                    <div class="h-36 flex items-center justify-center object-cover">
+                        <img src="assets/project/niranjan.png" alt="niranjan" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-sm font-semibold text-gray-900">Niranjan's Portfiolio</h3>
+                            <span class="flex items-center text-sm text-green-600 font-medium">
+                                <span class="status-dot"></span>Live
+                            </span>
+                        </div>
+                        <a href="https://niranjansimha.netlify.app/" target="_blank" class="text-sm text-gray-500">Link</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
+                    <div class="h-36 bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
+                        <div class="h-36 flex items-center justify-center object-cover">
+                            <img src="/assets/project/currency.png" alt="currency"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-sm font-semibold text-gray-900">Currency Convertor</h3>
+                            <span class="flex items-center text-sm text-green-600 font-medium">
+                                <span class="status-dot"></span>Live
+                            </span>
+                        </div>
+                        <a href="https://currency-sms.netlify.app/" target="_blank" class="text-sm text-gray-500 ">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </body>

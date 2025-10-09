@@ -51,6 +51,7 @@
                 </div>
             </div>
         </div>
+
         <div class="h-[2px] w-[100%] bg-white mt-6 mb-6"></div>
 
         <div class=" bg-white p-2.5 rounded-xl border border-dotted">
@@ -118,17 +119,16 @@
 
         <!-- Navigation -->
 
-        <div class="flex border-b border-gray-200 px-8 justify-center items-center">
-            <button class="tab-button tab-active px-4 py-4 text-gray-900"
-                onclick="switchTab(event,'projects')">Works</button>
-            <button class="tab-button px-4 py-4 text-gray-600" onclick="switchTab(event, 'snippets')">Snippets</button>
-            <button class="tab-button px-4 py-4 text-gray-600" onclick="switchTab(event, 'blogs')">Blogs</button>
+        <div class="flex border-b border-gray-200 px-8 justify-center items-center" id="navbtn">
+            <button class="tab-button tab-active px-4 py-4 text-gray-900">Works</button>
+            <button class="tab-button px-4 py-4 text-gray-600">Snippets</button>
+            <button class="tab-button px-4 py-4 text-gray-600">Blogs</button>
         </div>
         <!-- Navigation -->
 
 
         <!-- Projects Tab Content -->
-        <div id="projects-content" class="tab-content p-8">
+        <div id="works-content" class="tab-content p-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Project Card 1 -->
                 <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
@@ -198,7 +198,9 @@
         <div id="blogs-content" class="tab-content p-8 hidden">
             <div class="space-y-6">
                 <article class="border-b border-gray-200 pb-6">
-                    <a href="/blogs/MyWebJourney/" class="text-2xl font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">About my web Development journey</a>
+                    <a href="/blogs/MyWebJourney/"
+                        class="text-2xl font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">About my
+                        web Development journey</a>
                     <p class="text-gray-600 mb-3">Discussing How I Got Interested in Development.</p>
                     <div class="flex items-center gap-4 text-sm text-gray-500">
                         <span>01 Oct 2025</span>

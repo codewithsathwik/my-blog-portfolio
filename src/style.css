@@ -14,6 +14,10 @@ body {
     animation: pulse 2s infinite;
 }
 
+.status-dot span{
+    font-size: 12px !important;
+}
+
 @keyframes pulse {
 
     0%,
@@ -100,4 +104,13 @@ button {
 
 .skeliton-dot{
     background-color: oklch(68.1% 0.162 75.834) !important;
+}
+
+code {
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  background-color: #f8f9fa;
+  color: #d63384;
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+  border: 1px solid #e9ecef;
 }

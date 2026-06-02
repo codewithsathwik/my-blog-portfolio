@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
     <meta charset="UTF-8">
@@ -34,271 +34,254 @@
 
 </head>
 
-<body class="font-black bg-white p-5">
-    <div class="lg:max-w-[50vw] mx-auto bg-gray-100 min-h-[400px] rounded-xl p-5 mb-3.5" id="main">
-        <div class="flex flex-col sm:flex-row sm:gap-5 gap-1 items-center">
-            <div id="logo" class="rounded-full flex justify-center items-center sm:w-[200px] w-[130px]">
-                <img src="assets/23703.jpg" alt="my-img" class="w-[100%] rounded-full">
-            </div>
-            <div id="text" class="pt-2">
-                <h1 class=" sm:text-xl font-bold text-gray-900 mb-2 text-center sm:text-left">Sathwik M S</h1>
-                <p class="text-[12px] sm:text-[16px] text-gray-600 mb-3">Web Developer evolving into the AI space.
-                    Exploring bunch of Programming Languages for fun!</p>
-                <div class="flex items-center gap-0 mb-4 text-[12px] sm:text-[16px]">
-                    <span class="status-dot"></span>
-                    <span class="text-green-600 font-medium">Google Student Ambassador | AI Enthusiastic | Web Developer</span>
+<body
+    class="bg-[#f9f9f9] text-[#1a1c1c] dark:bg-[#000000] dark:text-[#ffffff] p-4 sm:p-8 transition-colors duration-300 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <div class="max-w-3xl mx-auto border-x border-dashed border-[#D4D4D8] dark:border-[#3f3f46] min-h-screen relative">
+
+        <!-- Header / Theme Toggle -->
+        <header
+            class="sticky top-0 z-50 flex justify-between items-center py-4 px-6 border-b border-dashed border-[#D4D4D8] dark:border-[#3f3f46] bg-[#f9f9f9]/80 dark:bg-[#000000]/80 backdrop-blur-md">
+            <div class="font-bold tracking-tight text-xl">Sathwik M S</div>
+            <button id="theme-toggle"
+                class="p-2 dashed-border hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                aria-label="Toggle Theme">
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="p-6 sm:p-10 space-y-12">
+            <section class="space-y-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <div
+                        class="w-[100px] h-[100px] sm:w-[170px] sm:h-[170px] bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden shrink-0">
+                        <img src="assets/23703.jpg" alt="my-img" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-3xl sm:text-4xl font-bold tracking-tighter">Sathwik M S</h1>
+                        <p
+                            class="text-[12px] sm:text-sm text-gray-600 dark:text-gray-400 mt-2 uppercase tracking-widest font-mono">
+                            Web Developer <span class="mx-2">/</span> AI Enthusiast
+                        </p>
+                    </div>
                 </div>
-                <div class="flex gap-4 text-gray-600">
-                    <a href="https://github.com/codewithsathwik" target="_blank" class="hover:text-gray-900 transition">
+
+                <div class="dashed-border p-4 text-sm leading-relaxed">
+                    I am a former freelance Web Developer currently transitioning my expertise into the field of
+                    Artificial Intelligence.
+                    Building systems bridging creative design and intelligent technical architecture.
+                </div>
+
+                <div class="flex flex-wrap gap-4 items-center font-mono text-sm">
+                    <a href="https://github.com/codewithsathwik" target="_blank"
+                        class="hover:text-gray-500 transition-colors" aria-label="GitHub">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                     </a>
-                    <a href="https://x.com/_sathvikms" target="_blank" class="hover:text-gray-900 transition">
+                    <a href="https://x.com/_sathvikms" target="_blank" class="hover:text-gray-500 transition-colors"
+                        aria-label="X (Twitter)">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
-                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/sathvvikms/" target="_blank"
-                        class="hover:text-gray-900 transition">
+                        class="hover:text-gray-500 transition-colors" aria-label="LinkedIn">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
-                    <a href="mailto:sathvikms344@gmail.com" target="_blank" class="hover:text-gray-900 transition">
+                    <a href="mailto:sathvikms344@gmail.com" class="hover:text-gray-500 transition-colors"
+                        aria-label="Email">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="h-[2px] w-[100%] bg-white mt-6 mb-6"></div>
-
-        <div class=" bg-white p-2.5 rounded-xl border border-dotted">
-            <p class="text-gray-700 text-[12px] sm:text-sm">I am a former freelance Web Developer currently
-                transitioning my expertise into the field of Artificial Intelligence.</p>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="mt-6  ">
-            <div class="mb-4">
-                <h3 class="text-[12px] sm:text-sm font-semibold text-gray-500 mb-2">Languages</h3>
-                <div>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <!-- <span class="skill-tag">TypeScript</span> -->
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h3 class="font-semibold text-gray-500 mb-2 text-[12px] sm:text-sm">Libraries & Frameworks</h3>
-                <div>
-                    <!-- <span class="skill-tag">React</span> -->
-                    <!-- <span class="skill-tag">Next.js</span> -->
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Express.js</span>
-                    <!-- <span class="skill-tag">Astro</span> -->
-                    <!-- <span class="skill-tag">Hono.js</span> -->
-                    <span class="skill-tag">Tailwind CSS</span>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h3 class="text-[12px] sm:text-sm font-semibold text-gray-500 mb-2">Databases</h3>
-                <div>
-                    <!-- <span class="skill-tag">PostgreSQL</span> -->
-                    <span class="skill-tag">MongoDB</span>
-                    <!-- <span class="skill-tag">Redis</span> -->
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h3 class="text-[12px] sm:text-sm font-semibold text-gray-500 mb-2">Tools</h3>
-                <div>
-                    <span class="skill-tag">Git</span>
-                    <!-- <span class="skill-tag">Bash</span> -->
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">Postman</span>
-                    <!-- <span class="skill-tag">Vercel</span> -->
-                    <span class="skill-tag">Figma</span>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text-sm font-semibold text-[12px] sm:text-sm text-gray-500 mb-2">& learning</h3>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- other section -->
-    <div class="lg:max-w-[50vw] mx-auto bg-gray-100 min-h-[200px] rounded-xl p-5 mb-3.5 text-[12px] sm:text-sm"
-        id="nav">
-
-        <!-- Navigation -->
-
-        <div class="flex border-b border-gray-200 px-8 justify-center items-center" id="navbtn">
-            <button class="tab-button tab-active px-4 py-4 text-gray-900">Works</button>
-            <button class="tab-button px-4 py-4 text-gray-600">Snippets</button>
-            <button class="tab-button px-4 py-4 text-gray-600">Blogs</button>
-        </div>
-        <!-- Navigation -->
-
-
-        <!-- Projects Tab Content -->
-        <div id="works-content" class="tab-content p-8 ">
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 max-w-sm">
-                    <div class="h-36 flex items-center justify-center object-cover">
-                        <img src="assets/project/bblf.png" alt="knrangaswamy" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center justify-between mb-2 text-[12px] sm:text-sm">
-                            <h3 class="text-[13px] sm:text-[15px] font-semibold text-gray-900">BBLF 2026</h3>
-                            <span class="flex items-center text-green-600 font-medium">
-                                <span class="status-dot text-[12px]"></span>Live
-                            </span>
+            <!-- Skills -->
+            <section class="space-y-4 pt-8 border-t border-dashed border-[#D4D4D8] dark:border-[#3f3f46]">
+                <h2 class="text-lg font-semibold tracking-tight">Technical Arsenal</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-2">Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Python</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">JavaScript</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">C++</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">C</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Java</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">HTML/CSS</span>
                         </div>
-                        <a href="https://bookbrahmalitfest.com/" target="_blank"
-                            class="text-[12px] sm:text-sm text-gray-500">Link</a>
                     </div>
-                </div>
-
-                <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 max-w-sm">
-                    <div class="h-36 flex items-center justify-center object-cover">
-                        <img src="assets/project/knkangaswamy.png" alt="knrangaswamy"
-                            class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center justify-between mb-2 text-[12px] sm:text-sm">
-                            <h3 class="text-[13px] sm:text-[15px] font-semibold text-gray-900">Student's Portfolio</h3>
-                            <span class="flex items-center text-green-600 font-medium">
-                                <span class="status-dot text-[12px]"></span>Live
-                            </span>
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-2">Frameworks, Libraries & Tools
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Pydantic</span>
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">LangChain</span> -->
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Gemini AI</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Tailwind CSS</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Git/GitHub</span>
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Node.js</span> -->
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Express.js</span> -->
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">MongoDB</span> -->
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Figma</span> -->
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Postman</span> -->
                         </div>
-                        <a href="https://knrangaswamy.vercel.app/" target="_blank"
-                            class="text-[12px] sm:text-sm text-gray-500">Link</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Tabs -->
+            <section class="space-y-6 pt-8 border-t border-dashed border-[#D4D4D8] dark:border-[#3f3f46]">
+                <div class="flex gap-6 border-b border-dashed border-[#D4D4D8] dark:border-[#3f3f46]" id="navbtn">
+                    <button class="tab-button tab-active pb-2 font-bold transition-opacity">Works</button>
+                    <button class="tab-button pb-2 opacity-70 hover:opacity-100 transition-opacity">Snippets</button>
+                    <button class="tab-button pb-2 opacity-70 hover:opacity-100 transition-opacity">Blogs</button>
+                </div>
+
+                <!-- Works Tab -->
+                <div id="works-content" class="tab-content">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Project 1 -->
+                        <a href="https://icee-rosy.vercel.app/" target="_blank"
+                            class="block dashed-border p-4 project-card relative group">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="font-bold text-sm">ICEE</h3>
+                                <span class="flex items-center text-[10px] uppercase tracking-wider"><span
+                                        class="status-dot"></span>Live</span>
+                            </div>
+                            <p class="text-[11px] font-mono opacity-80 group-hover:opacity-100 mb-4 truncate">Indian
+                                Election Explorer</p>
+                            <div class="w-full h-28 bg-gray-200 dark:bg-gray-800 grayscale overflow-hidden">
+                                <img src="assets/project/ICEE.png" alt="ICEE"
+                                    class="w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen opacity-50 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </a>
+
+
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 max-w-sm">
-                    <div class="h-36 flex items-center justify-center object-cover">
-                        <img src="assets/project/niranjan.png" alt="niranjan" class="w-full h-full object-cover">
+                <!-- Snippets Tab -->
+                <div id="snippets-content" class="tab-content hidden">
+                    <div class="text-center py-12 dashed-border">
+                        <h3 class="text-lg font-bold mb-2">Code Snippets</h3>
+                        <p class="text-sm font-mono opacity-70">Useful code utilities coming soon.</p>
                     </div>
-                    <div class="p-5">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-[13px] sm:text-[15px] font-semibold text-gray-900">Niranjan's Portfolio</h3>
-                            <span class="flex items-center text-green-600 font-medium">
-                                <span class="status-dot text-[12px]"></span>Live
-                            </span>
+                </div>
+
+                <!-- Blogs Tab -->
+                <div id="blogs-content" class="tab-content hidden">
+                    <div class="text-center py-12 dashed-border">
+                        <p class="text-sm mb-4">My blogs have been relocated.</p>
+                        <a href="https://blogs.sathwikms.site/"
+                            class="font-mono hover:underline uppercase text-xs font-bold tracking-widest border border-dashed border-current px-3 py-1">Read
+                            Blogs -></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="space-y-4 pt-8 border-t border-dashed border-[#D4D4D8] dark:border-[#3f3f46]">
+                <h2 class="text-lg font-semibold tracking-tight">Experience</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 dashed-border flex items-start gap-4">
+                        <img src="assets/experience/localhost.jpg" alt="LocalHost Logo" class="rounded flex-shrink-0"
+                            style="width: 45px; height: auto; object-fit: contain; border-radius: 7px;">
+                        <div>
+                            <h3 class="font-bold mb-1">Lead</h3>
+                            <p class="text-sm mb-2">LocalHost - Community</p>
+                            <p class="text-xs font-mono opacity-70">Mar 2026 - Present</p>
                         </div>
-                        <a href="https://niranjansimha.vercel.app/" target="_blank"
-                            class="text-[12px] sm:text-sm text-gray-500 ">Link</a>
                     </div>
-                </div>
-
-
-
-                <!-- Project Card 4 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200 max-w-sm">
-                    <!-- Image skeleton -->
-                    <div class="h-36 skeleton-shimmer"></div>
-
-                    <div class="p-5">
-                        <div class="flex gap-2.5 items-center justify-between mb-2">
-                            <h3 class="text-[13px] sm:text-[15px] font-semibold text-gray-900">Sozoloop</h3>
-                            <span class="flex items-center text-yellow-600 font-medium">
-                                <span class="status-dot skeliton-dot text-[12px]"></span>In Progress
-                            </span>
+                    <div class="p-4 dashed-border flex items-start gap-4">
+                        <img src="assets/experience/google.jpg" alt="Google Logo" class="rounded flex-shrink-0"
+                            style="width: 45px; height: auto; object-fit: contain; border-radius: 7px;">
+                        <div>
+                            <h3 class="font-bold mb-1">Campus Ambassador</h3>
+                            <p class="text-sm mb-2">Google · Internship</p>
+                            <p class="text-xs font-mono opacity-70">Mar 2026 - Present</p>
                         </div>
-
-                        <div class="h-4 rounded skeleton-shimmer" style="width: 60px;"></div>
+                    </div>
+                    <div class="p-4 dashed-border flex items-start gap-4">
+                        <img src="assets/experience/webfreelance.png" alt="Freelance Logo" class="rounded flex-shrink-0"
+                            style="width: 45px; height: auto; object-fit: contain; border-radius: 7px;">
+                        <div>
+                            <h3 class="font-bold mb-1">Web Developer</h3>
+                            <p class="text-sm mb-2">Freelance · Self-employed</p>
+                            <p class="text-xs font-mono opacity-70">Jul 2025 - Mar 2026</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- snippets -->
-        <div id="snippets-content" class="tab-content p-8 hidden">
-            <div class="text-center py-12">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Code Snippets</h3>
-                <p class="text-gray-600">Useful code snippets and utilities coming soon!</p>
-            </div>
-        </div>
+            <!-- Education -->
+            <section class="space-y-4 pt-8 border-t border-dashed border-[#D4D4D8] dark:border-[#3f3f46]">
+                <h2 class="text-lg font-semibold tracking-tight">Education</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 dashed-border">
+                        <h3 class="font-bold mb-1">SDM College, Ujire</h3>
+                        <p class="text-xs font-mono opacity-70 mb-2">BCA (2024 - 2027)</p>
+                        <p class="text-sm">Grade: 9.21 CGPA (4 SEM)</p>
+                    </div>
+                    <div class="p-4 dashed-border">
+                        <h3 class="font-bold mb-1">St. Mary's PU College</h3>
+                        <p class="text-xs font-mono opacity-70 mb-2">Commerce (2022 - 2024)</p>
+                        <p class="text-sm">Grade: 97.16%</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- blogs-content -->
-        <div id="blogs-content" class="tab-content p-8 hidden">
-            <P>My blogs has been shifted to other page. Click below to redirect</P>
-            <a href="https://blogs.sathwikms.site/" class="text-2xl text-center w-full border-2 p-0.5 rounded-2xl">Click
-                Here</a>
-        </div>
-    </div>
+            <!-- About -->
+            <section class="space-y-4 pt-8 border-t border-dashed border-[#D4D4D8] dark:border-[#3f3f46]">
+                <h2 class="text-lg font-semibold tracking-tight">About Me</h2>
+                <div class="space-y-4 text-sm leading-relaxed opacity-90">
+                    <p>
+                        I am a BCA student specializing in <strong>Generative AI</strong>. Having previously worked as a
+                        <strong>freelance Web Developer</strong>, I am now
+                        focusing my passion for tech on the development of intelligent applications. I bridge the gap
+                        between creative design and technical architecture, turning complex problems into clean,
+                        functional code. My experience includes architecting custom project management backends and
+                        delivering polished, responsive frontend solutions.
+                    </p>
+                    <p>
+                        I am passionate about community building and currently serve as a <strong>Google Student
+                            Ambassador</strong> on my campus. I am dedicated to fostering a vibrant developer culture at
+                        SDM College and believe in 'building in public'—creating collaborative spaces where innovation
+                        meets execution.
+                    </p>
+                    <p class="italic opacity-80 border-l-2 border-current pl-4">
+                        "I’ve realized that professional growth is about more than just technical logic; it turns out
+                        that the most important connections aren't found in a database, and I am now exploring how AI
+                        can deepen those human experiences."
+                    </p>
+                </div>
+            </section>
+        </main>
 
-    <!-- education section -->
-    <div class="lg:max-w-[50vw] mx-auto bg-gray-100 min-h-[100px] rounded-xl p-5 mb-3.5 text-[12px] sm:text-sm">
-        <h2 class="text-[14px] font-semibold text-gray-900 text-center border-b-2 max-w-max mb-2">Education</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <div class="p-1.5 border-2 border-dotted rounded-xl">
-                <h3 class="text-xl">SDM College, Ujire</h3>
-                <p>BCA - Bachelor of Computer Applications</p>
-                <p>2024 - 2027(Present)</p>
-                <p>Grade : 9.17 CGPA (3 SEM)</p>
-            </div>
-            <div class="p-1.5 border-2 border-dotted rounded-xl">
-                <h3 class="text-xl">St. Mary's PU College</h3>
-                <p>Commerce - (Business,Accounts,Computer Science,Statistics)</p>
-                <p>2022 - 2024</p>
-                <p>Grade : 97.16%</p>
-            </div>
-        </div>
-    </div>
-    <div class="lg:max-w-[50vw] mx-auto bg-gray-100 min-h-[100px] rounded-xl p-5 mb-3.5 text-[12px] sm:text-sm">
-        <h2 class="text-[14px] font-semibold text-gray-900 text-center border-b-2 max-w-max mb-2">About Me</h2>
-        <p class="text-[12px] sm:text-sm font-semibold text-gray-900 mb-2">
-            I am a BCA student specializing in the MERN stack and C++. Having previously worked as a
-            <code>freelance Web Developer</code>, I am now focusing my passion for tech on
-            <code>Artificial Intelligence</code>. I bridge the gap between creative design and intelligent technical
-            architecture, turning complex problems into clean, functional code. My recent work includes developing the
-            frontend for the <code>Book Brahma Literature Festival 2026</code> and architecting custom project
-            management backends.
-        </p>
-
-
-
-        <p class="text-[12px] sm:text-sm font-semibold text-gray-900 mb-2">
-            I am passionate about community building and currently serve as a <code>Google Student Ambassador</code> in my campus. I
-            am working toward becoming the
-            <code>Founding Lead of GDGoC at SDM College, actively collaborating with the GDGoC team at Vivekananda College, Puttur</code>,
-            to bring a developer culture to my campus. I believe in 'building in public' and fostering a space where
-            innovation meets execution.
-        </p>
-
-        <p class="text-[12px] sm:text-sm font-semibold text-gray-900">
-            I’ve realized that professional growth is about more than just technical logic; it turns out that the most
-            important connections aren't found in a database, and I am now exploring how AI can deepen those human
-            experiences.
-        </p>
+        <footer class="py-6 text-center border-t border-dashed border-[#D4D4D8] dark:border-[#3f3f46]">
+            <p class="text-xs font-mono uppercase tracking-widest opacity-60">Let's connect - <a
+                    href="https://www.linkedin.com/in/sathvvikms/" target="_blank"
+                    class="font-bold hover:underline">LinkedIn</a></p>
+        </footer>
 
     </div>
-
-    <div class="lg:max-w-[50vw] mx-auto bg-gray-100 rounded-xl p-5 text-center" id="foot">
-        <p class="text-[12px] sm:text-sm font-semibold text-gray-900">Anyone Can Contact me.</p>
-    </div>
-
 
     <script src="app.js"></script>
 </body>

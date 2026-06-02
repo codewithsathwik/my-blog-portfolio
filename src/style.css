@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+html {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -7,110 +11,60 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #10b981;
-    border-radius: 50%;
+    background-color: currentColor;
     display: inline-block;
     margin-right: 6px;
     animation: pulse 2s infinite;
 }
 
-.status-dot span{
+.status-dot span {
     font-size: 12px !important;
 }
 
 @keyframes pulse {
-
     0%,
     100% {
         opacity: 1;
     }
-
     50% {
         opacity: 0.5;
     }
 }
 
-.skill-tag {
-    background-color: #babbbe;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #0d0d0e;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    display: inline-block;
-}
-@media (max-width : 640px) {
-    .skill-tag{
-        font-size: 12px;
-    }
-}
-
 .tab-active {
-    border-bottom: 2px solid #1f2937;
+    border-bottom: 2px solid currentColor;
     font-weight: 600;
-}
-
-.project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 button {
     cursor: pointer;
 }
 
-/* *{ */
-/* background-color: #1f2937; */
-/* color: white; */
-/* } */
-
-#main,
-#nav,
-#foot {
-    box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-.skeleton-shimmer {
-    position: relative;
-    overflow: hidden;
-    background-color: #e5e7eb;
-}
-
-.skeleton-shimmer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    animation: shimmer 1.5s infinite;
-}
-
-.skeliton-dot{
-    background-color: oklch(68.1% 0.162 75.834) !important;
-}
-
+/* Minimalist code styling */
 code {
-  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
-  background-color: #f8f9fa;
-  color: #d63384;
-  padding: 0.125em 0.25em;
-  border-radius: 0.25em;
-  border: 1px solid #e9ecef;
+    font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+    padding: 0.125em 0.25em;
+    border: 1px dashed currentColor;
+    opacity: 0.8;
+}
+
+/* Base custom styles for dash layout */
+.dashed-border {
+    border: 1px dashed #D4D4D8;
+}
+.dark .dashed-border {
+    border-color: #3f3f46;
+}
+
+/* Hover effects for project cards */
+.project-card {
+    transition: background-color 0.2s, color 0.2s;
+}
+.project-card:hover {
+    background-color: #000;
+    color: #fff;
+}
+.dark .project-card:hover {
+    background-color: #fff;
+    color: #000;
 }

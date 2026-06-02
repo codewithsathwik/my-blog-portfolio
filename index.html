@@ -36,10 +36,12 @@
 
 <body
     class="bg-[#f9f9f9] text-[#1a1c1c] dark:bg-[#000000] dark:text-[#ffffff] p-4 sm:p-8 transition-colors duration-300 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-black dark:bg-white z-50 transform origin-left scale-x-0 transition-transform"></div>
+    <div id="smooth-wrapper" data-scroll-ease="0.075">
     <div class="max-w-3xl mx-auto border-x border-dashed border-[#D4D4D8] dark:border-[#3f3f46] min-h-screen relative">
 
         <!-- Header / Theme Toggle -->
-        <header
+        <header data-scroll-ignore
             class="sticky top-0 z-50 flex justify-between items-center py-4 px-6 border-b border-dashed border-[#D4D4D8] dark:border-[#3f3f46] bg-[#f9f9f9]/80 dark:bg-[#000000]/80 backdrop-blur-md">
             <div class="font-bold tracking-tight text-xl">Sathwik M S</div>
             <button id="theme-toggle"
@@ -282,7 +284,9 @@
         </footer>
 
     </div>
+    </div>
 
+    <script src="src/smooth-scroll.js"></script>
     <script src="app.js"></script>
 </body>
 

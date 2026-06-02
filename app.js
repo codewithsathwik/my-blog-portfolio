@@ -48,3 +48,11 @@ btnList.forEach((btn) => {
         switchTab(event, textValue);
     });
 });
+
+// Initialize Smooth Scroll
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof SmoothScroll !== 'undefined') {
+        const scroller = new SmoothScroll();
+        scroller.init();
+    }
+});

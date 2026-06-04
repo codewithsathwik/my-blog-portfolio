@@ -1,230 +1,122 @@
 class SmoothScroll {
     constructor(options = {}) {
-        // Find wrapper
-        this.wrapper = document.querySelector('#smooth-wrapper');
-        if (!this.wrapper) return;
-
-        // Settings
-        this.defaultEase = options.ease || 0.075;
-        this.ease = this.defaultEase;
-        
-        // Override with data attribute if present
-        const customEase = this.wrapper.getAttribute('data-scroll-ease');
-        if (customEase) {
-            this.ease = parseFloat(customEase);
-        }
-
-        // State
-        this.current = 0;
-        this.target = 0;
-        this.rAF = null;
-        this.isRunning = false;
-        this.windowHeight = window.innerHeight;
-        this.documentHeight = 0;
-
-        // Parallax and in-view elements
-        this.parallaxElements = document.querySelectorAll('[data-scroll-speed]');
-        this.inViewElements = document.querySelectorAll('[data-scroll-inview]');
-        this.ignoreElements = document.querySelectorAll('[data-scroll-ignore]');
-
-        
-        // Progress bar
-        this.progressBar = document.querySelector('#scroll-progress');
-
-        // Check for reduced motion
         this.mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (this.mediaQuery.matches) {
-            this.ease = 1.0;
-        }
-
-        // Bind methods
-        this.update = this.update.bind(this);
-        this.onScroll = this.onScroll.bind(this);
-        this.onResize = this.onResize.bind(this);
-        this.onKeyDown = this.onKeyDown.bind(this);
-        this.onLinkClick = this.onLinkClick.bind(this);
+        this.lenis = null;
     }
 
     init() {
-        if (!this.wrapper) return;
-
-        // Apply styles to body/html
-        document.body.style.position = 'relative';
-        document.documentElement.style.overflowX = 'hidden';
-        document.body.style.overflowX = 'hidden';
-
-        // Apply styles to wrapper
-        this.wrapper.style.position = 'fixed';
-        this.wrapper.style.top = '0';
-        this.wrapper.style.left = '0';
-        this.wrapper.style.width = '100%';
-        this.wrapper.style.overflow = 'hidden';
-        this.wrapper.style.willChange = 'transform';
-
-        // Set initial heights
-        this.onResize();
-
-        // Listeners
-        window.addEventListener('scroll', this.onScroll, { passive: true });
-        window.addEventListener('resize', this.onResize);
-        window.addEventListener('keydown', this.onKeyDown);
-        
-        // Handle anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', this.onLinkClick);
-        });
-
-        // Set initial values
-        this.target = window.scrollY || document.documentElement.scrollTop;
-        this.current = this.target;
-        this.applyTransform();
-
-        // Start loop if needed
-        this.startLoop();
-    }
-
-    destroy() {
-        this.stopLoop();
-        window.removeEventListener('scroll', this.onScroll);
-        window.removeEventListener('resize', this.onResize);
-        window.removeEventListener('keydown', this.onKeyDown);
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.removeEventListener('click', this.onLinkClick);
-        });
-
-        // Reset styles
-        document.body.style.height = '';
-        this.wrapper.style.position = '';
-        this.wrapper.style.transform = '';
-    }
-
-    startLoop() {
-        if (!this.isRunning) {
-            this.isRunning = true;
-            this.rAF = requestAnimationFrame(this.update);
-        }
-    }
-
-    stopLoop() {
-        if (this.isRunning) {
-            cancelAnimationFrame(this.rAF);
-            this.isRunning = false;
-        }
-    }
-
-    onScroll() {
-        this.target = window.scrollY || document.documentElement.scrollTop;
-        this.startLoop();
-    }
-
-    onResize() {
-        this.windowHeight = window.innerHeight;
-        // Natural height of the inner content
-        this.documentHeight = this.wrapper.scrollHeight;
-        
-        // Set body height to enable native scrollbar
-        document.body.style.height = `${this.documentHeight}px`;
-    }
-
-    onKeyDown(e) {
-        // Browsers handle keyboard scrolling natively via window.scroll by changing scrollY
-        // We just need to make sure the loop is running to catch up to the new scrollY
-        this.startLoop();
-    }
-
-    onLinkClick(e) {
-        const href = e.currentTarget.getAttribute('href');
-        if (href === '#') return;
-
-        const targetElement = document.querySelector(href);
-        if (targetElement) {
-            e.preventDefault();
-            this.scrollTo(targetElement.offsetTop);
-        }
-    }
-
-    scrollTo(y, animate = true) {
-        // Cap the max scroll
-        const maxY = this.documentHeight - this.windowHeight;
-        y = Math.max(0, Math.min(y, maxY));
-        
-        if (!animate || this.mediaQuery.matches) {
-            window.scrollTo(0, y);
-            this.current = y;
-            this.target = y;
-            this.applyTransform();
-        } else {
-            window.scrollTo(0, y); // This sets the native target
-            this.target = y;
-            this.startLoop();
-        }
-    }
-
-    getProgress() {
-        const maxY = this.documentHeight - this.windowHeight;
-        if (maxY === 0) return 0;
-        return Math.max(0, Math.min(this.current / maxY, 1));
-    }
-
-    update() {
-        // Lerp equation
-        const diff = this.target - this.current;
-        const delta = Math.abs(diff);
-
-        // If we are close enough, snap to target and stop loop
-        if (delta < 0.1) {
-            this.current = this.target;
-            this.applyTransform();
-            this.stopLoop();
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || typeof Lenis === 'undefined') {
+            console.error('GSAP, ScrollTrigger, or Lenis is not loaded.');
             return;
         }
 
-        // Apply lerp
-        this.current += diff * this.ease;
-        this.applyTransform();
+        gsap.registerPlugin(ScrollTrigger);
 
-        // Continue loop
-        if (this.isRunning) {
-            this.rAF = requestAnimationFrame(this.update);
+        // If user prefers reduced motion, just setup animations without smooth scroll
+        if (this.mediaQuery.matches) {
+            this.setupAnimations();
+            return;
         }
+
+        // Initialize Lenis for native smooth scrolling
+        this.lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        // Sync Lenis scroll with GSAP ScrollTrigger
+        this.lenis.on('scroll', ScrollTrigger.update);
+
+        // Sync GSAP ticker with Lenis raf
+        gsap.ticker.add((time) => {
+            this.lenis.raf(time * 1000);
+        });
+
+        // Fixes slight lag between GSAP and Lenis
+        gsap.ticker.lagSmoothing(0);
+
+        this.setupAnimations();
+
+        // Handle internal anchor links using Lenis
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const target = e.currentTarget.getAttribute('href');
+                if (target === '#') return;
+                const targetElement = document.querySelector(target);
+                if (targetElement) {
+                    e.preventDefault();
+                    this.lenis.scrollTo(targetElement);
+                }
+            });
+        });
     }
 
-    applyTransform() {
-        // Main wrapper transform
-        // Ignore negative current (overscroll bounce) for the transform to prevent wrapper pulling down
-        let y = this.current;
-        // Optional: limit y to avoid bouncing tearing, though some like the bounce. We'll allow it.
-        
-        this.wrapper.style.transform = `translate3d(0, ${-y}px, 0)`;
-
-        // Update progress bar
-        if (this.progressBar) {
-            const progress = this.getProgress();
-            this.progressBar.style.transform = `scaleX(${progress})`;
+    setupAnimations() {
+        // Progress bar animation using ScrollTrigger
+        const progressBar = document.querySelector('#scroll-progress');
+        if (progressBar) {
+            gsap.to(progressBar, {
+                scaleX: 1,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: document.documentElement,
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: 0.1
+                }
+            });
         }
 
-        // Handle Parallax elements
-        this.parallaxElements.forEach(el => {
+        // Parallax elements
+        const parallaxElements = document.querySelectorAll('[data-scroll-speed]');
+        parallaxElements.forEach(el => {
             const speed = parseFloat(el.getAttribute('data-scroll-speed') || 0);
-            const offset = y * speed;
-            el.style.transform = `translate3d(0, ${offset}px, 0)`;
+            if (speed === 0) return;
+
+            // This replicates the old logic: offset = scrollY * speed
+            gsap.to(el, {
+                y: () => ScrollTrigger.maxScroll(window) * speed,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: document.documentElement,
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: true,
+                    invalidateOnRefresh: true
+                }
+            });
         });
 
-        // Handle In-View classes
-        this.inViewElements.forEach(el => {
-            const top = el.offsetTop;
-            const bottom = top + el.offsetHeight;
-            
-            if (top < y + this.windowHeight && bottom > y) {
-                el.classList.add('is-inview');
-            }
+        // In-view elements
+        const inViewElements = document.querySelectorAll('[data-scroll-inview]');
+        inViewElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 90%', // Trigger when the top of the element hits 90% down the viewport
+                end: 'bottom top',
+                toggleClass: 'is-inview',
+            });
         });
 
-        // Inverse transform for ignored elements (like sticky headers)
-        this.ignoreElements.forEach(el => {
-            el.style.transform = `translate3d(0, ${y}px, 0)`;
-        });
+        // The old custom script used data-scroll-ignore for sticky elements 
+        // because it translated the entire wrapper.
+        // With Lenis, native scrolling is preserved, so position: sticky works perfectly 
+        // without any JavaScript interference. No need to process data-scroll-ignore!
+    }
+
+    destroy() {
+        if (this.lenis) {
+            this.lenis.destroy();
+            this.lenis = null;
+        }
+        ScrollTrigger.getAll().forEach(t => t.kill());
     }
 }
 

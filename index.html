@@ -36,8 +36,9 @@
 
 <body
     class="bg-[#f9f9f9] text-[#1a1c1c] dark:bg-[#000000] dark:text-[#ffffff] p-4 sm:p-8 transition-colors duration-300 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
-    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-black dark:bg-white z-50 transform origin-left scale-x-0 transition-transform"></div>
-    <div id="smooth-wrapper" data-scroll-ease="0.15">
+    <div id="scroll-progress"
+        class="fixed top-0 left-0 h-1 bg-black dark:bg-white z-50 transform origin-left scale-x-0 transition-transform">
+    </div>
     <div class="max-w-3xl mx-auto border-x border-dashed border-[#D4D4D8] dark:border-[#3f3f46] min-h-screen relative">
 
         <!-- Header / Theme Toggle -->
@@ -76,6 +77,10 @@
                         </p>
                     </div>
                 </div>
+
+                <p class="italic opacity-80 border-l-2 border-current pl-4">
+                    "A tech enthusiastic guy dedicated in Building Community, not just codebases."
+                </p>
 
                 <div class="dashed-border p-4 text-sm leading-relaxed">
                     I am a former freelance Web Developer currently transitioning my expertise into the field of
@@ -135,10 +140,12 @@
                         </h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Pydantic</span>
-                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">LangChain</span> -->
-                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Gemini AI</span>
                             <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Tailwind CSS</span>
                             <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Git/GitHub</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Antigravity
+                                IDE</span>
+                            <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Gemini AI</span>
+                            <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">LangChain</span> -->
                             <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Node.js</span> -->
                             <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">Express.js</span> -->
                             <!-- <span class="text-[11px] sm:text-xs font-mono px-2 py-1 dashed-border">MongoDB</span> -->
@@ -255,7 +262,8 @@
                 <h2 class="text-lg font-semibold tracking-tight">About Me</h2>
                 <div class="space-y-4 text-sm leading-relaxed opacity-90">
                     <p>
-                        I am a BCA student specializing in <strong>Generative AI</strong>. Having previously worked as a
+                        I am a BCA student specializing in <strong>Artificial Intelligence</strong>. Having previously
+                        worked as a
                         <strong>freelance Web Developer</strong>, I am now
                         focusing my passion for tech on the development of intelligent applications. I bridge the gap
                         between creative design and technical architecture, turning complex problems into clean,
@@ -268,11 +276,6 @@
                         SDM College and believe in 'building in public'—creating collaborative spaces where innovation
                         meets execution.
                     </p>
-                    <p class="italic opacity-80 border-l-2 border-current pl-4">
-                        "I’ve realized that professional growth is about more than just technical logic; it turns out
-                        that the most important connections aren't found in a database, and I am now exploring how AI
-                        can deepen those human experiences."
-                    </p>
                 </div>
             </section>
         </main>
@@ -284,7 +287,11 @@
         </footer>
 
     </div>
-    </div>
+
+    <!-- GSAP & Lenis -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
 
     <script src="src/smooth-scroll.js"></script>
     <script src="app.js"></script>
